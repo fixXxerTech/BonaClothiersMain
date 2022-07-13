@@ -243,7 +243,7 @@ class AllProductsView(LoginRequiredMixin, custom_view):
         return render(request, self.template_name, context=context)
 
     def post(self, request):
-        form_class = form.InventoryForm(request.POST, request.FILES)
+        form_class = forms.InventoryForm(request.POST, request.FILES)
         outfit_inventory = reversed(models.InventoryModel.objects.all())
 
         context = {

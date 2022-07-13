@@ -356,15 +356,16 @@
 
                         <div class="col-md-6">
                           <div class="form-floating">
-                            <input type="text" class="form-control" id="StyleName" placeholder="Style name" name="style_name" value="{{ form.style_name.value }}">
-                            <label for="StyleName">Style Name</label>
+														{{ form.style_name  }}
+<!--                             <input type="text" class="form-control" id="StyleName" placeholder="Style name" name="style_name" value="{{ form.style_name.value }}"> -->
+                            <label for="StyleName">{{ form.style_name.label }}</label>
                           </div>
                         </div>
 
                         <div class="col-md-6">
                           <label for="StyleImage" class="text-center">
                             <!-- {{ form.color_image.label }} -->
-                            <img src="{{ form.color_image.value.url }}" width="60px" height="60px" id="StyleImagePreview"/>
+                            <img src="{{ form.style_image.value.url }}" width="60px" height="60px" id="StyleImagePreview"/>
                             <span class="font-weight-bold">
                               <br>
                               Style Image
@@ -381,7 +382,7 @@
                           <i class="bi bi-pencil-square"></i>
                           Update Styles
                         </button>
-                        <a href="{% url 'AllColorsView' %}">
+                        <a href="{% url 'AllStylesView' %}">
                           <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
                             <i class="bi bi-x-octagon"></i>
                             Cancel

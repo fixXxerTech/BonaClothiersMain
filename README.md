@@ -1,11 +1,21 @@
 # BonaClothiers
 BonaClothiers is a fashion designer which produces top notch fashion from a variety of styles and colors for all customer demographics.
 
+## Update: Version 0.6
+Added several changes to frontend layout, several bug fixes, message system implemented for better alerts. See full update summary below;
+
+* Fixed Style image not showing bug [ In edit styl section ]
+* Fixed add inventory "form" does not exist error [ Typo: Spelt form INSTEAD of forms ]
+* Disabled manager input field in the outfit section  [ To avoid the manager accidentally changing their username ]
+* Changed the style  name input field to a select field
+* Fixed edit styles section cancel button bug [ Was redirecting to all colors NOT all styles ]
+  
+
 ## Update: Version 0.5
 Added several changes to frontend layout, several bug fixes, message system implemented for better alerts. See full update summary below;
 
 * Removed phonenumber from signup process
-* Remved Date & Date Edited from all tables
+* Removed Date & Date Edited from all tables
 * Added outfit style section [ Model, View, Template ] 
 	* Add new outfit styles [ Styles name & Image ]
 	* Edit/Update existing outfit styles

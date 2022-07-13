@@ -365,8 +365,9 @@
 
                               <div class="col-md-6">
                                 <div class="form-floating">
-                                  <input type="text" class="form-control" id="StyleName" placeholder="Style name" name="style_name">
-                                  <label for="StyleName">Style Name</label>
+																	{{ form.style_name }}
+<!--                                   <input type="text" class="form-control" id="StyleName" placeholder="Style name" name="style_name"> -->
+                                  <label for="StyleName">{{ form.style_name.label }}</label>
                                 </div>
                               </div>
 
