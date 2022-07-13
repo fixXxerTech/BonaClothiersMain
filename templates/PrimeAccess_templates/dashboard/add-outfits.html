@@ -1,0 +1,183 @@
+{% extends 'prime-base.html'  %}
+{% load static %}
+
+{% block title %}
+    <title>Outfits Inventory - Add Ouftits - {{ panel_name }}</title>
+{% endblock title %}
+
+{% block content %}
+   <!-- ======= main ( Outfits ) ======= -->
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Outfits Inventory</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'PrimeAccessView' %}">Home</a></li>
+          <li class="breadcrumb-item active"><a href="{% url 'AllProductsView' category='-' %}"></a>Outfit Inventory</li>
+          <li class="breadcrumb-item active">Add Outfit</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <!-- <div class="row"> -->
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+            <!-- Recent Sales -->
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Add New Outfit</h5>
+
+                  <!-- Floating Labels Form -->
+                  <form method="post" action="." class="row g-3" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="col-md-12">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="OutfitName" placeholder="Outfit Name" name="outfit_name">
+                        <label for="OutfitName">Outfit Name</label>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-floating mb-3">
+                        {{ form.outfit_measurement_type }}
+                        <!-- <select class="form-select" id="OutfitType" aria-label="OutfitType">
+                          <option selected>New York</option>
+                          <option value="1">Oregon</option>
+                          <option value="2">DC</option>
+                        </select> -->
+                        <label for="OutfitType">{{ form.outfit_measurement_type.label }}</label>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-floating">
+                        <input type="text" class="form-control" id="OutfitPrice"  placeholder="Outfit Price" name="outfit_price">
+                        <label for="OutfitPrice">Outfit Price</label>
+                      </div>
+                    </div>
+
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-outline-success">
+                        <i class="bi bi-folder-plus"></i>
+                        Add Outfit
+                      </button>
+                      <button type="reset" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-clockwise"></i>
+                        Reset
+                      </button>
+                    </div>
+                  </form><!-- End floating Labels Form -->
+
+                </div>
+
+              </div>
+            </div><!-- End Recent Sales -->
+
+            <!-- Top Selling -->
+            <div class="col-12">
+              <div class="card top-selling overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Today</a></li>
+                    <li><a class="dropdown-item" href="#">This Month</a></li>
+                    <li><a class="dropdown-item" href="#">This Year</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body pb-0">
+                  <h5 class="card-title">Top Selling <!-- <span>| Today</span> --></h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">Preview</th>
+                        <th scope="col">Outfit</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Sold</th>
+                        <th scope="col">Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static 'img/product-1.jpg' %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                        <td>$64</td>
+                        <td class="fw-bold">124</td>
+                        <td>$5,828</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static 'img/product-2.jpg' %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                        <td>$46</td>
+                        <td class="fw-bold">98</td>
+                        <td>$4,508</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static 'img/product-3.jpg' %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                        <td>$59</td>
+                        <td class="fw-bold">74</td>
+                        <td>$4,366</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static 'img/product-4.jpg' %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                        <td>$32</td>
+                        <td class="fw-bold">63</td>
+                        <td>$2,016</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><a href="#"><img src="{% static 'img/product-5.jpg' %}" alt=""></a></th>
+                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                        <td>$79</td>
+                        <td class="fw-bold">41</td>
+                        <td>$3,239</td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div><!-- End Top Selling -->
+
+          </div>
+        </div><!-- End Left side columns -->
+
+      <!-- </div> -->
+    </section>
+
+  </main><!-- End #main ( Outfits ) -->
+{% endblock content %}
+
+{% block extra_js %}
+  <!-- Extra Main JS File -->
+  <script src="{% static 'js/extras.js' %}"></script>
+{% endblock extra_js %}

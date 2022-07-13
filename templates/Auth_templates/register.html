@@ -1,0 +1,154 @@
+{% extends 'prime-base.html'  %}
+{% load static %}
+
+{% block navbar %}
+{% endblock navbar %}
+
+{% block sidebar %}
+{% endblock sidebar %}
+
+{% block content %}
+   <!-- ======= main ( Register ) ======= -->
+    
+  <main>
+    <div class="container">
+
+      <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6 d-flex flex-column align-items-center justify-content-center">
+
+              <div class="d-flex justify-content-center py-4">
+                <a href="index.html" class="logo d-flex align-items-center w-auto">
+                  <img src="{% static 'img/logo.png' %}" alt="">
+                  <span class="d-none d-lg-block">{{ panel_name }}</span>
+                </a>
+              </div><!-- End Logo -->
+
+              <div class="card mb-3">
+
+                <div class="card-body">
+
+                  <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
+                    <p class="text-center small">Enter your personal details to create account</p>
+                  </div>
+
+                  {% if form.errors or profile_form.errors %}
+                      {% for key, value in form.errors.items %}
+                        <div class="border border-danger rounded text-danger text-center font-weight-bold my-3" style="border: 5px solid red;">
+                          <p class="text-capitalize pt-2">
+                            <i class="bi bi-exclamation-octagon"></i>
+                            <br>
+                            <span class="text-bold">Error</span>
+                            <br>
+                            <span class="text-bold">{{ key }}:</span> {{ value|striptags }}</p>
+                        </div>
+                      {% endfor %}
+
+                      {% for key, value in profile_form.errors.items %}
+                        <div class="border border-danger rounded text-danger text-center font-weight-bold my-3" style="border: 5px solid red;">
+                          <p class="text-capitalize pt-2">
+                            <i class="bi bi-exclamation-octagon"></i>
+                            <br>
+                            <span class="text-bold">Error</span>
+                            <br>
+                            <span class="text-bold">{{ key }}:</span> {{ value|striptags  }}</p>
+                        </div>
+                      {% endfor %}
+                  {% endif %}
+
+                  <form method="post" action="." class="row g-3 needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">{{ form.username.label }}</label>
+                      {{ form.username }}
+                      <!-- <div class="invalid-feedback">Please choose a username!</div> -->
+                      <!-- Hidden fields which display either error (1st) or success (2nd) -->
+                      <div class="usernameFeedBackArea text-danger" style="display:none"></div>
+                      <p class="text-sm text-success usernameSuccessOutput"></p>
+                    </div>
+
+                    <!-- <div class="col-12">
+                      <label for="userphone" class="form-label">{{ profile_form.userphonenumber.label }}</label>
+                      {{ profile_form.userphonenumber }}
+                      <!-- <div class="invalid-feedback">Please enter a valid phone number!</div> -->
+                      <!-- Hidden fields which display either error (1st) or success (2nd) 
+                      <div class="phoneFeedBackArea text-danger" style="display:none"></div>
+                      <p class="text-sm text-success phoneSuccessOutput"></p>
+                    </div> -->
+
+                    <div class="col-12">
+                      <label for="yourUsername" class="form-label">{{ form.email.label }}</label>
+                      <div class="input-group has-validation">
+                        <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        {{ form.email }}
+                        <!-- <div class="invalid-feedback">Please enter a valid email address.</div> -->
+                      </div>
+                      <!-- Hidden fields which display either error (1st) or success (2nd) -->
+                      <div class="emailFeedBackArea text-danger" style="display:none"></div>
+                      <p class="text-sm text-success emailSuccessOutput"></p>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword1" class="form-label">{{ form.password1.label }}</label>
+                      {{ form.password1 }}
+                      <!-- <input type="password" name="password" class="form-control" id="yourPassword" required> -->
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPassword2" class="form-label">{{ form.password2.label }}</label>
+                      {{ form.password2 }}
+                      <!-- <input type="password" name="password" class="form-control" id="yourPassword" required> -->
+                      <div class="invalid-feedback">Please confirm your password!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
+                        <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
+                        <div class="invalid-feedback">You must agree before submitting.</div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <button id="user-auth-sumbit-btn" class="btn btn-outline-primary w-100" type="submit">
+                        <i class="bi bi-person-plus"></i>
+                        Create Account
+                      </button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Already have an account? <a href="{% url 'LoginView' message='-' %}">Log in</a></p>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+
+              <div class="credits">
+                <!-- All the links in the footer should remain intact. -->
+                <!-- You can delete the links only if you purchased the pro version. -->
+                <!-- Licensing information: https://bootstrapmade.com/license/ -->
+                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+                Created by <a href="https://mrmanagwu.com/">Mr.Managwu</a> & <a href="https://fixertech.herokuapp.com">fixXxerTech</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+  </main><!-- End #main ( Register )-->
+{% endblock content %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block extra_js %}
+<!-- Template Asnyc SignUp JS File -->
+<script src="{% static 'js/async-signup.js' %}"> </script>
+{% endblock extra_js %}
+

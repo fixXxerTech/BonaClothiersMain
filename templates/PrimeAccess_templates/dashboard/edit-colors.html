@@ -1,0 +1,469 @@
+{% extends 'prime-base.html'  %}
+{% load static %}
+{% load humanize %}
+
+{% block title %}
+    <title>Colors - {{ panel_name }}</title>
+{% endblock title %}
+
+{% block content %}
+   <!-- ======= main ( Orders ) ======= -->
+
+   <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Colors</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{% url 'PrimeAccessView' %}">Home</a></li>
+          <li class="breadcrumb-item active">Fabric Colors</li>
+        </ol>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <section class="section dashboard">
+      <!-- <div class="row"> -->
+
+        <!-- Left side columns -->
+        <div class="col-lg-12">
+          <div class="row">
+
+              <!-- <div class="d-flex scroll-cards overflow-auto mb-3">
+
+                <!-- Sales Card 
+                <div class="col-xxl-4 col-md-6" style="padding: 0 0 20px 0;">
+                  <div class="card info-card sales-card">
+
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="card-title">Sales <span>| Today</span></h5>
+
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-cart"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>145</h6>
+                          <span class="text-success small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div><!-- End Sales Card -->
+
+                <!-- Revenue Card 
+                <div class="col-xxl-4 col-md-6" style="padding: 0 15px 0 0;">
+                  <div class="card info-card revenue-card">
+
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>$3,264</h6>
+                          <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div><!-- End Revenue Card -->
+
+                <!-- Revenue Card 
+                <div class="col-xxl-4 col-md-6" style="padding: 0 15px 0 0;">
+                  <div class="card info-card revenue-card">
+
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="card-title">Revenue <span>| Today</span></h5>
+
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>$3,264</h6>
+                          <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div><!-- End Revenue Card -->
+
+                <!-- Revenue Card 
+                <div class="col-xxl-4 col-md-6" style="padding: 0 15px 0 0;">
+                  <div class="card info-card revenue-card">
+
+                    <div class="filter">
+                      <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                      <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                        <li class="dropdown-header text-start">
+                          <h6>Filter</h6>
+                        </li>
+
+                        <li><a class="dropdown-item" href="#">Today</a></li>
+                        <li><a class="dropdown-item" href="#">This Month</a></li>
+                        <li><a class="dropdown-item" href="#">This Year</a></li>
+                      </ul>
+                    </div>
+
+                    <div class="card-body">
+                      <h5 class="card-title">Revenue <span>| This Month</span></h5>
+
+                      <div class="d-flex align-items-center">
+                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                          <i class="bi bi-currency-dollar"></i>
+                        </div>
+                        <div class="ps-3">
+                          <h6>$3,264</h6>
+                          <span class="text-success small pt-1 fw-bold">8%</span> <span class="text-muted small pt-2 ps-1">increase</span>
+
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div><!-- End Revenue Card 
+              </div>-->
+
+              <!-- Customers Card -->
+              <!-- <div class="col-xxl-4 col-xl-12">
+
+                <div class="card info-card customers-card">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Customers <span>| This Year</span></h5>
+
+                    <div class="d-flex align-items-center">
+                      <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                        <i class="bi bi-people"></i>
+                      </div>
+                      <div class="ps-3">
+                        <h6>1244</h6>
+                        <span class="text-danger small pt-1 fw-bold">12%</span> <span class="text-muted small pt-2 ps-1">decrease</span>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div> -->
+              <!-- End Customers Card -->
+
+              <!-- Reports 
+              <div class="col-12">
+                <div class="card">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Reports <span>/Today</span></h5>
+
+                    <!-- Line Chart 
+                    <div id="reportsChart"></div>
+
+                    <script>
+                      document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#reportsChart"), {
+                          series: [{
+                            name: 'Sales',
+                            data: [31, 40, 28, 51, 42, 82, 56],
+                          }, 
+                          {
+                            name: 'Revenue',
+                            data: [11, 32, 45, 32, 34, 52, 41]
+                          }, 
+                          {
+                            name: 'Customers',
+                            data: [15, 11, 32, 18, 9, 24, 11]
+                          }
+                          ],
+                          chart: {
+                            height: 350,
+                            type: 'area',
+                            toolbar: {
+                              show: false
+                            },
+                          },
+                          markers: {
+                            size: 4
+                          },
+                          colors: ['#4154f1', '#2eca6a', '#ff771d'],
+                          fill: {
+                            type: "gradient",
+                            gradient: {
+                              shadeIntensity: 1,
+                              opacityFrom: 0.3,
+                              opacityTo: 0.4,
+                              stops: [0, 90, 100]
+                            }
+                          },
+                          dataLabels: {
+                            enabled: false
+                          },
+                          stroke: {
+                            curve: 'smooth',
+                            width: 2
+                          },
+                          xaxis: {
+                            type: 'datetime',
+                            categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+                          },
+                          tooltip: {
+                            x: {
+                              format: 'dd/MM/yy HH:mm'
+                            },
+                          }
+                        }).render();
+                      });
+                    </script>
+                    <!-- End Line Chart 
+
+                  </div>
+
+                </div>
+              </div><!-- End Reports -->
+
+              <!-- Recent Sales -->
+              <div class="col-12">
+
+              {% if form.errors %}
+                {% for key, value in form.errors.items %}
+                  <div class="alert alert-danger alert-dismissible fade show w-100" role="alert">
+                    <!-- <i class="bi bi-exclamation-octagon"></i> -->
+                    <h4 class="alert-heading">
+                    <i class="bi bi-exclamation-octagon"></i>  Error</h4>
+                    <p class="text-capitalize">{{ key }}:</span> {{ value|striptags }}</p>
+                    <!-- <hr> -->
+                    <!-- p class="mb-0">Temporibus quis et qui aspernatur laboriosam sit eveniet qui sunt.</p> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                {% endfor %}
+              {% endif %}
+              
+                <div class="card recent-sales overflow-auto">
+
+                  <!-- <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div> -->
+                  <div class="filter">
+
+                  </div>
+
+                  <div class="card-body">
+                    <h5 class="card-title">Recent Colors <!-- <span>| Today</span> --></h5>
+
+                    <!-- Floating Labels Form -->
+                    <form method="post" action="." class="row g-3" enctype="multipart/form-data">
+                      {% csrf_token %}
+            
+
+                      <div class="modal-body row g-3">
+
+                        <div class="col-md-6">
+                          <div class="form-floating">
+                            <input type="text" class="form-control" id="ColorName" placeholder="Color name" name="color_name" value="{{ form.color_name.value }}">
+                            <label for="ColorName">Color Name</label>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6">
+                          <label for="StyleImage" class="text-center">
+                            <!-- {{ form.color_image.label }} -->
+                            <img src="{{ form.color_image.value.url }}" width="60px" height="60px" id="StyleImagePreview"/>
+                            <span class="font-weight-bold">
+                              <br>
+                              Color Image
+                            </span>
+                          </label>
+
+                          <input type="file" id="StyleImage" alt="Color Image" name="color_image"accept="image/jpeg, image/png, image/gif, image/jpg, image/svg image/*" style="display: none;"/>
+                        </div>
+
+                      </div>
+
+                      <div class="modal-footer justify-content-center">
+                        <button type="submit" class="btn btn-outline-primary">
+                          <i class="bi bi-pencil-square"></i>
+                          Update Color
+                        </button>
+                        <a href="{% url 'AllColorsView' %}">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">
+                            <i class="bi bi-x-octagon"></i>
+                            Cancel
+                          </button>
+                        </a>
+                      </div>
+                    </form>
+
+                  </div>
+
+                </div>
+              </div><!-- End Recent Sales -->
+
+              <!-- Top Selling -->
+              <div class="col-12">
+                <div class="card top-selling overflow-auto">
+
+                  <div class="filter">
+                    <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                      <li class="dropdown-header text-start">
+                        <h6>Filter</h6>
+                      </li>
+
+                      <li><a class="dropdown-item" href="#">Today</a></li>
+                      <li><a class="dropdown-item" href="#">This Month</a></li>
+                      <li><a class="dropdown-item" href="#">This Year</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="card-body pb-0">
+                    <h5 class="card-title">Top Colors <!-- <span>| Today</span> --></h5>
+
+                    <table class="table table-borderless datatable">
+                      <thead>
+                        <tr>
+                          <th scope="col">Preview</th>
+                          <th scope="col">Product</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Sold</th>
+                          <th scope="col">Revenue</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="{% static 'img/product-1.jpg' %}" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
+                          <td>$64</td>
+                          <td class="fw-bold">124</td>
+                          <td>$5,828</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="{% static 'img/product-2.jpg' %}" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
+                          <td>$46</td>
+                          <td class="fw-bold">98</td>
+                          <td>$4,508</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="{% static 'img/product-3.jpg' %}" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
+                          <td>$59</td>
+                          <td class="fw-bold">74</td>
+                          <td>$4,366</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="{% static 'img/product-4.jpg' %}" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
+                          <td>$32</td>
+                          <td class="fw-bold">63</td>
+                          <td>$2,016</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"><a href="#"><img src="{% static 'img/product-5.jpg' %}" alt=""></a></th>
+                          <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
+                          <td>$79</td>
+                          <td class="fw-bold">41</td>
+                          <td>$3,239</td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                  </div>
+
+                </div>
+              </div><!-- End Top Selling -->
+
+          </div>
+        </div><!-- End Left side columns -->
+
+      <!-- </div> -->
+    </section>
+
+  </main><!-- End #main ( Orders ) -->
+{% endblock content %}
+
+{% block extra_js %}
+  <!-- Extra Main JS File -->
+  <script src="{% static 'js/extras.js' %}"></script>
+{% endblock extra_js %}
